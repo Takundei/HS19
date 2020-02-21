@@ -14,26 +14,29 @@ class theHue:
 
     def turn_it_off(self):
         payload = {"on" : False}
-        requests.request('PUT',self.url+'lights/3/state',json=payload)
+        # requests.request('PUT',self.url+'lights/3/state',json=payload)
 
 
     def turn_it_on(self):
         payload = {"on" : True, "bri" : 5,"hue":189,"sat":20}
-        requests.request('PUT',self.url+'lights/3/state',headers={},json=payload)
+        # requests.request('PUT',self.url+'lights/3/state',headers={},json=payload)
 
     def risky_biznis(self,obj,val):
         payload = {obj : val}
-        response = requests.request('PUT',self.url+'lights/3/state',headers={},json=payload)
-        print('RSK ->', response.json())
+        # response = requests.request('PUT',self.url+'lights/3/state',headers={},json=payload)
+        # print('RSK ->', response.json())
 
     def status(self):
         payload = {"on" : True, "bri" : 5,"hue":189,"sat":20}
-        response = requests.request('GET',self.url+'lights/3',headers={},json=payload)
-        print('RSK ->', response.json())
-        if response.json()["state"]["on"]:
-            return 'ON'
-        else:
+        # response = requests.request('GET',self.url+'lights/3',headers={},json=payload)
+        # print('RSK ->', response.json())
+        # if response.json()["state"]["on"]:
+        #     return 'ON'
+        # else:
+        #     return 'OFF'
+        return 'OFF' 
             return 'OFF' 
+        return 'OFF' 
 
 class Light_state(Resource):
     def __init__(self):
@@ -91,4 +94,4 @@ api.add_resource(Light_state, '/api/light/state/<state>')
     
 if __name__ == "__main__":
     api = theHue()
-    app.run(port='2630',host='10.120.51.145',debug=True) #0.0.0.0
+    app.run(port='2630',host='127.0.0.1',debug=True) #0.0.0.0
