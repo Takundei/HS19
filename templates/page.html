@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>M2M Dashbord</title>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0.5   "/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+</script>
+<style>
+    .body {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 15px;
+        margin-top: 5%;
+        background-color:rgb(233, 233, 233);
+        border-radius: 10px;
+
+    }
+    .uptop{
+        margin-left: 35%;
+    }
+    </style>
+</head>
+<body>
+
+<div class = "body" id="body">
+<h6 class="h6" style="padding-left:0%;">M2M Device Manager</h6>
+<h1 class="h1" style="padding-left:10%;">PHILIPS 806 Lumen</h1>
+<p style="padding-left:30%;">M2M enabled light device</p>
+<hr>
+<div class="uptop">
+<h3 class="h1 text-warning">{{suggestions["state"]}}</h3>
+<h4 class="h4 ">IOTA : {{suggestions["IOTA"]}}</h3>
+<h4 class="h4 ">{{suggestions["status"]}}</h3>
+</div>
+<hr>
+
+<!-- <h5 class="h5">Messages :</h3>
+<label id="value_lable">
+    {% for suggestion in suggestions["issues"] %}
+        {{ suggestion }}<br>
+    {% endfor %}
+</label> -->
+
+<h5 class="h5">Events :</h3>
+<code>
+    {% for suggestion in suggestions["log"] %}
+        {{ suggestion }}<br>
+    {% endfor %}
+</code>
+</div>
+
+<div id="body1"></div>
+</body>
+</html>
